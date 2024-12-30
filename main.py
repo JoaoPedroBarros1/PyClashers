@@ -49,19 +49,10 @@ def drawMap():
     for xIndex in range(0, screenWidthBy64):
         for yIndex in range(0, screenHeightBy64):
             x = IDMap[xIndex][yIndex]
-            match x:
-                case 1:
-                    screen.blit(floor1, (xIndex*64, yIndex*64))
-                case 2:
-                    screen.blit(floor1, (xIndex * 64, yIndex * 64))
-                case 3:
-                    screen.blit(floor1, (xIndex * 64, yIndex * 64))
-                case 4:
-                    screen.blit(floor1, (xIndex * 64, yIndex * 64))
-                case 5:
-                    screen.blit(floor2, (xIndex * 64, yIndex * 64))
-                case 6:
-                    screen.blit(floor2, (xIndex * 64, yIndex * 64))
+            if x < 5:
+                screen.blit(floor1, (xIndex * 64, yIndex * 64))
+            else:
+                screen.blit(floor2, (xIndex * 64, yIndex * 64))
 
 
 # Posição do mouse
